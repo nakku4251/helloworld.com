@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "myprofile.apps.MyprofileConfig",
+    "diaries.apps.DiariesConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
