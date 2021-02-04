@@ -3,6 +3,6 @@ from . import views
 
 app_name = "diaries"
 
-urlpatterns = {
+urlpatterns = [
 
-}
+]
