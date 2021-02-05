@@ -1,0 +1,8 @@
+{% extends "reviews/base.html" %}
+{% block content %}
+  <form acotion="{% url 'reviews:review_create_send' %}" method="POST">
+    <input type="text" name="store_name">
+    {% csrf_token %}
+    <button type="submit">返信</button>
+  </form>
+{% endblock %}
