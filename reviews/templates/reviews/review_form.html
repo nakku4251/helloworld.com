@@ -5,6 +5,7 @@
     {{ form.as_p }}
     {% if form.instance.pk %}
       <p>{{ form.instance.created_at }}</p>
+    {% endif %}
     {% csrf_token %}
     <button type="submit">返信</button>
   </form>
