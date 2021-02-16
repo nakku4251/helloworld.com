@@ -16,10 +16,9 @@ class Top(generic.FormView):
         subject = "お問合せがありました"
         message = render_to_string("contact/mail.txt", form.cleaned_data,self.request)
 
-        name = form.cleaned_data.get("name")
-        email = form.cleaned_data.get("email")
-        text = form.cleaned_data.get("text")
-        category = form.cleaned_data.get("category")
+        from_email = "toritoritorina@gmail.com"
+        recipient_list = ["toritoritorina@gmail.com"]
+        send_mail(subject,message,from_email,recipient_list,)
         return redirect("contact:thanks")
 
 class Thanks(generic.TemplateView):

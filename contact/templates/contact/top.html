@@ -3,7 +3,7 @@
 {% block content %}
   <h1>お問い合せ</h1>
   <form action="" method="POST">
-    {{ form.as_p }}
+    {% include "contact/form.html" %}
     {% csrf_token %}
     <button type="submit">返信</button>
   </form>

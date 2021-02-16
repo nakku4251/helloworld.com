@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "diaries.apps.DiariesConfig",
     "reviews.apps.ReviewsConfig",
     "contact.apps.ContactConfig",
+    "videos.apps.VideosConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+MEDIA_URL = "/media/"
