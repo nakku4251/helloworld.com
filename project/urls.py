@@ -26,6 +26,7 @@ urlpatterns = [
     path("reviews/", include("reviews.urls")),
     path("contact/", include("contact.urls")),
     path("videos/", include("videos.urls")),
+    path("blog/", include("blog.urls")),
     path("", include("myprofile.urls")),
 ]
 
