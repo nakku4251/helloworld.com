@@ -18,7 +18,7 @@ class PostList(generic.ListView):
         if form.is_valid():
             key_word = form.cleaned_data.get('key_word')
             if key_word:
-                queryset = queryset.filter(Q(title__icotains=key_word) | Q(text__icontains=key_word))
+                queryset = queryset.filter(Q(title__icontains=key_word) | Q(text__icontains=key_word))
 
             category = form.cleaned_data.get('category')
             if category:
