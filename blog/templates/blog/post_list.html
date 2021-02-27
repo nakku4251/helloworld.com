@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-
+{% load blog %}
 {% block content %}
     {% for post in post_list %}
         <article class="box">
@@ -13,7 +13,7 @@
     {% endfor %}
     <!-- 前へ　の部分 -->
     {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">前へ</a>
+        <a href="?{% url_replace request 'page' page_obj.previous_page_number %}">前へ</a>
     {% endif %}
 
     <!-- 数字の部分 -->
@@ -21,6 +21,12 @@
         {% if page_obj.number == num %}
             <span>{{ num }}</span>
         {% else %}
-            <a href="?page={{ num }}">{{ num }}</a>
+            <a href="?{% url_replace request 'page' num %}">{{ num }}</a>
         {% endif %}
+    {% endfor %}
+
+    <!-- 次への部分　　-->
+    {% if page_obj.has_next %}
+        <a href="?{% url_replace request 'page' page_obj.next_page_number %}">次へ</a>
+    {% endif %}
 {% endblock %}
